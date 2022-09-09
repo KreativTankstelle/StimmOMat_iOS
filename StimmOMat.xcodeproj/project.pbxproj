@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		060C089E28CBF5ED004CEB6C /* StimmOMatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C089D28CBF5ED004CEB6C /* StimmOMatApp.swift */; };
+		060C08A028CBF5ED004CEB6C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C089F28CBF5ED004CEB6C /* ContentView.swift */; };
+		060C08A228CBF5EE004CEB6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 060C08A128CBF5EE004CEB6C /* Assets.xcassets */; };
+		060C08A528CBF5EE004CEB6C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 060C08A428CBF5EE004CEB6C /* Preview Assets.xcassets */; };
+		060C08AF28CBF5EE004CEB6C /* StimmOMatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C08AE28CBF5EE004CEB6C /* StimmOMatTests.swift */; };
+		060C08B928CBF5EE004CEB6C /* StimmOMatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C08B828CBF5EE004CEB6C /* StimmOMatUITests.swift */; };
+		060C08BB28CBF5EE004CEB6C /* StimmOMatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C08BA28CBF5EE004CEB6C /* StimmOMatUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		060C08AB28CBF5EE004CEB6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 060C089228CBF5ED004CEB6C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 060C089928CBF5ED004CEB6C;
+			remoteInfo = StimmOMat;
+		};
+		060C08B528CBF5EE004CEB6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 060C089228CBF5ED004CEB6C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 060C089928CBF5ED004CEB6C;
+			remoteInfo = StimmOMat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		060C089A28CBF5ED004CEB6C /* StimmOMat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StimmOMat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		060C089D28CBF5ED004CEB6C /* StimmOMatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimmOMatApp.swift; sourceTree = "<group>"; };
+		060C089F28CBF5ED004CEB6C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		060C08A128CBF5EE004CEB6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		060C08A428CBF5EE004CEB6C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		060C08AA28CBF5EE004CEB6C /* StimmOMatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StimmOMatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		060C08AE28CBF5EE004CEB6C /* StimmOMatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimmOMatTests.swift; sourceTree = "<group>"; };
+		060C08B428CBF5EE004CEB6C /* StimmOMatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StimmOMatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		060C08B828CBF5EE004CEB6C /* StimmOMatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimmOMatUITests.swift; sourceTree = "<group>"; };
+		060C08BA28CBF5EE004CEB6C /* StimmOMatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimmOMatUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		060C089728CBF5ED004CEB6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		060C08A728CBF5EE004CEB6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		060C08B128CBF5EE004CEB6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		060C089128CBF5ED004CEB6C = {
+			isa = PBXGroup;
+			children = (
+				060C089C28CBF5ED004CEB6C /* StimmOMat */,
+				060C08AD28CBF5EE004CEB6C /* StimmOMatTests */,
+				060C08B728CBF5EE004CEB6C /* StimmOMatUITests */,
+				060C089B28CBF5ED004CEB6C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		060C089B28CBF5ED004CEB6C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				060C089A28CBF5ED004CEB6C /* StimmOMat.app */,
+				060C08AA28CBF5EE004CEB6C /* StimmOMatTests.xctest */,
+				060C08B428CBF5EE004CEB6C /* StimmOMatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		060C089C28CBF5ED004CEB6C /* StimmOMat */ = {
+			isa = PBXGroup;
+			children = (
+				060C089D28CBF5ED004CEB6C /* StimmOMatApp.swift */,
+				060C089F28CBF5ED004CEB6C /* ContentView.swift */,
+				060C08A128CBF5EE004CEB6C /* Assets.xcassets */,
+				060C08A328CBF5EE004CEB6C /* Preview Content */,
+			);
+			path = StimmOMat;
+			sourceTree = "<group>";
+		};
+		060C08A328CBF5EE004CEB6C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				060C08A428CBF5EE004CEB6C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		060C08AD28CBF5EE004CEB6C /* StimmOMatTests */ = {
+			isa = PBXGroup;
+			children = (
+				060C08AE28CBF5EE004CEB6C /* StimmOMatTests.swift */,
+			);
+			path = StimmOMatTests;
+			sourceTree = "<group>";
+		};
+		060C08B728CBF5EE004CEB6C /* StimmOMatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				060C08B828CBF5EE004CEB6C /* StimmOMatUITests.swift */,
+				060C08BA28CBF5EE004CEB6C /* StimmOMatUITestsLaunchTests.swift */,
+			);
+			path = StimmOMatUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		060C089928CBF5ED004CEB6C /* StimmOMat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 060C08BE28CBF5EE004CEB6C /* Build configuration list for PBXNativeTarget "StimmOMat" */;
+			buildPhases = (
+				060C089628CBF5ED004CEB6C /* Sources */,
+				060C089728CBF5ED004CEB6C /* Frameworks */,
+				060C089828CBF5ED004CEB6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StimmOMat;
+			productName = StimmOMat;
+			productReference = 060C089A28CBF5ED004CEB6C /* StimmOMat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		060C08A928CBF5EE004CEB6C /* StimmOMatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 060C08C128CBF5EE004CEB6C /* Build configuration list for PBXNativeTarget "StimmOMatTests" */;
+			buildPhases = (
+				060C08A628CBF5EE004CEB6C /* Sources */,
+				060C08A728CBF5EE004CEB6C /* Frameworks */,
+				060C08A828CBF5EE004CEB6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				060C08AC28CBF5EE004CEB6C /* PBXTargetDependency */,
+			);
+			name = StimmOMatTests;
+			productName = StimmOMatTests;
+			productReference = 060C08AA28CBF5EE004CEB6C /* StimmOMatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		060C08B328CBF5EE004CEB6C /* StimmOMatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 060C08C428CBF5EE004CEB6C /* Build configuration list for PBXNativeTarget "StimmOMatUITests" */;
+			buildPhases = (
+				060C08B028CBF5EE004CEB6C /* Sources */,
+				060C08B128CBF5EE004CEB6C /* Frameworks */,
+				060C08B228CBF5EE004CEB6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				060C08B628CBF5EE004CEB6C /* PBXTargetDependency */,
+			);
+			name = StimmOMatUITests;
+			productName = StimmOMatUITests;
+			productReference = 060C08B428CBF5EE004CEB6C /* StimmOMatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		060C089228CBF5ED004CEB6C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					060C089928CBF5ED004CEB6C = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					060C08A928CBF5EE004CEB6C = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 060C089928CBF5ED004CEB6C;
+					};
+					060C08B328CBF5EE004CEB6C = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 060C089928CBF5ED004CEB6C;
+					};
+				};
+			};
+			buildConfigurationList = 060C089528CBF5ED004CEB6C /* Build configuration list for PBXProject "StimmOMat" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 060C089128CBF5ED004CEB6C;
+			productRefGroup = 060C089B28CBF5ED004CEB6C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				060C089928CBF5ED004CEB6C /* StimmOMat */,
+				060C08A928CBF5EE004CEB6C /* StimmOMatTests */,
+				060C08B328CBF5EE004CEB6C /* StimmOMatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		060C089828CBF5ED004CEB6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				060C08A528CBF5EE004CEB6C /* Preview Assets.xcassets in Resources */,
+				060C08A228CBF5EE004CEB6C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		060C08A828CBF5EE004CEB6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		060C08B228CBF5EE004CEB6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		060C089628CBF5ED004CEB6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				060C08A028CBF5ED004CEB6C /* ContentView.swift in Sources */,
+				060C089E28CBF5ED004CEB6C /* StimmOMatApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		060C08A628CBF5EE004CEB6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				060C08AF28CBF5EE004CEB6C /* StimmOMatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		060C08B028CBF5EE004CEB6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				060C08BB28CBF5EE004CEB6C /* StimmOMatUITestsLaunchTests.swift in Sources */,
+				060C08B928CBF5EE004CEB6C /* StimmOMatUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		060C08AC28CBF5EE004CEB6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 060C089928CBF5ED004CEB6C /* StimmOMat */;
+			targetProxy = 060C08AB28CBF5EE004CEB6C /* PBXContainerItemProxy */;
+		};
+		060C08B628CBF5EE004CEB6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 060C089928CBF5ED004CEB6C /* StimmOMat */;
+			targetProxy = 060C08B528CBF5EE004CEB6C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		060C08BC28CBF5EE004CEB6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		060C08BD28CBF5EE004CEB6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		060C08BF28CBF5EE004CEB6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"StimmOMat/Preview Content\"";
+				DEVELOPMENT_TEAM = Z64XA2TVS9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.offenesjena.StimmOMat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		060C08C028CBF5EE004CEB6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"StimmOMat/Preview Content\"";
+				DEVELOPMENT_TEAM = Z64XA2TVS9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.offenesjena.StimmOMat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		060C08C228CBF5EE004CEB6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z64XA2TVS9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.offenesjena.StimmOMatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StimmOMat.app/StimmOMat";
+			};
+			name = Debug;
+		};
+		060C08C328CBF5EE004CEB6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z64XA2TVS9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.offenesjena.StimmOMatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StimmOMat.app/StimmOMat";
+			};
+			name = Release;
+		};
+		060C08C528CBF5EE004CEB6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z64XA2TVS9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.offenesjena.StimmOMatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StimmOMat;
+			};
+			name = Debug;
+		};
+		060C08C628CBF5EE004CEB6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z64XA2TVS9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.offenesjena.StimmOMatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StimmOMat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		060C089528CBF5ED004CEB6C /* Build configuration list for PBXProject "StimmOMat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				060C08BC28CBF5EE004CEB6C /* Debug */,
+				060C08BD28CBF5EE004CEB6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		060C08BE28CBF5EE004CEB6C /* Build configuration list for PBXNativeTarget "StimmOMat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				060C08BF28CBF5EE004CEB6C /* Debug */,
+				060C08C028CBF5EE004CEB6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		060C08C128CBF5EE004CEB6C /* Build configuration list for PBXNativeTarget "StimmOMatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				060C08C228CBF5EE004CEB6C /* Debug */,
+				060C08C328CBF5EE004CEB6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		060C08C428CBF5EE004CEB6C /* Build configuration list for PBXNativeTarget "StimmOMatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				060C08C528CBF5EE004CEB6C /* Debug */,
+				060C08C628CBF5EE004CEB6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 060C089228CBF5ED004CEB6C /* Project object */;
+}
