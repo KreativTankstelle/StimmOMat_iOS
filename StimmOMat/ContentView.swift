@@ -113,7 +113,7 @@ struct ContentView: View {
                   //  if (showButton)
                   //  {
                     
-                    NavigationLink(destination: Frage1View()) {
+                    NavigationLink(destination: Frage1View().navigationBarBackButtonHidden(true)) {
                         Text("Los geht's!")
                             .foregroundColor(Color.white)
                             .padding(.horizontal, 22)

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Frage1View: View {
+struct Frage3View: View {
     var body: some View {
 
         ZStack {
@@ -22,7 +22,7 @@ struct Frage1View: View {
             VStack(alignment: .center,
                    spacing:   0) {
          
-                Text("Frage 1")
+                Text("Frage 3")
                     .font(.system(size: 25))
                     .tracking(2)
                     .foregroundColor(Color.white)
@@ -30,30 +30,27 @@ struct Frage1View: View {
                     .padding(.top, 25.0)
                     .padding(.bottom, 30.0)
 
-                Text("Was macht dich glücklich?")
+                Text("Damit sich etwas ändert...")
                     .font(.system(size: 42))
                     .tracking(1)
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
+                    .padding(.bottom, 15.0)
+
+                Text("Wofür machst du dich stark?")
+                    .font(.system(size: 35))
+                    .tracking(1)
+                    .foregroundColor(Color.white)
+                    .multilineTextAlignment(.center)
+
+                Text("Was könntest du tun?")
+                    .font(.system(size: 35))
+                    .tracking(1)
+                    .foregroundColor(Color.white)
+                    .multilineTextAlignment(.center)
                     .padding(.bottom, 30.0)
-
-
-
-                Spacer()
-                
-                NavigationLink(destination: Frage2View().navigationBarBackButtonHidden(true)) {
-                    Text("Nächste Frage")
-                        .foregroundColor(Color.white)
-                        .padding(.horizontal, 22)
-                        .padding(.vertical, 12.0)
-                        .background(Color(red: 224/255, green: 2/255, blue: 121/255))
-                        .font(.title)
-                }
-                .frame(height: 50)
                 
                 Spacer()
-                
-                
                 
                 Text("Du hast gleich 30 Sekunden Zeit um die Frage zu beantworten.")
                     .font(.system(size: 16))
@@ -84,8 +81,8 @@ struct Frage1View: View {
 
 }
 
-struct Frage1View_Previews: PreviewProvider {
+struct Frage3View_Previews: PreviewProvider {
     static var previews: some View {
-        Frage1View()
+        Frage3View()
     }
 }

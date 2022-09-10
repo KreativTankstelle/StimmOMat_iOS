@@ -19,6 +19,8 @@
 		0685E38528CCF01300E9C63F /* NutzungsbedingungenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E38428CCF01300E9C63F /* NutzungsbedingungenView.swift */; };
 		0685E38728CD001000E9C63F /* Datenschutz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E38628CD001000E9C63F /* Datenschutz.swift */; };
 		0685E38928CD054800E9C63F /* Frage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E38828CD054800E9C63F /* Frage1.swift */; };
+		0685E38B28CD106200E9C63F /* Frage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E38A28CD106200E9C63F /* Frage2.swift */; };
+		0685E38D28CD106F00E9C63F /* Frage3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E38C28CD106F00E9C63F /* Frage3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		0685E38428CCF01300E9C63F /* NutzungsbedingungenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutzungsbedingungenView.swift; sourceTree = "<group>"; };
 		0685E38628CD001000E9C63F /* Datenschutz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datenschutz.swift; sourceTree = "<group>"; };
 		0685E38828CD054800E9C63F /* Frage1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frage1.swift; sourceTree = "<group>"; };
+		0685E38A28CD106200E9C63F /* Frage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frage2.swift; sourceTree = "<group>"; };
+		0685E38C28CD106F00E9C63F /* Frage3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frage3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,8 @@
 				0685E38428CCF01300E9C63F /* NutzungsbedingungenView.swift */,
 				0685E38628CD001000E9C63F /* Datenschutz.swift */,
 				0685E38828CD054800E9C63F /* Frage1.swift */,
+				0685E38A28CD106200E9C63F /* Frage2.swift */,
+				0685E38C28CD106F00E9C63F /* Frage3.swift */,
 			);
 			path = StimmOMat;
 			sourceTree = "<group>";
@@ -284,9 +290,11 @@
 				0685E38528CCF01300E9C63F /* NutzungsbedingungenView.swift in Sources */,
 				060C08A028CBF5ED004CEB6C /* ContentView.swift in Sources */,
 				0685E38328CCB86100E9C63F /* AudioHandler.swift in Sources */,
+				0685E38B28CD106200E9C63F /* Frage2.swift in Sources */,
 				0685E38728CD001000E9C63F /* Datenschutz.swift in Sources */,
 				060C089E28CBF5ED004CEB6C /* StimmOMatApp.swift in Sources */,
 				0685E38928CD054800E9C63F /* Frage1.swift in Sources */,
+				0685E38D28CD106F00E9C63F /* Frage3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
