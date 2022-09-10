@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var player     = AudioHandler();
     @State private var showButton = false
-    
+
     var body: some View {
 
         ZStack {
@@ -46,7 +47,7 @@ struct ContentView: View {
                 HStack()
                 {
                 
-                    Button{
+                    Button {
                         print("Nutzungsbedingungen!")
                     } label: {
                         Text("Nutzungsbedingungen")
@@ -60,7 +61,7 @@ struct ContentView: View {
                         .foregroundColor(Color.white)
                         .multilineTextAlignment(.center)
 
-                    Button{
+                    Button {
                         print("Datenschutz!")
                     } label: {
                         Text("Datenschutz")
@@ -77,32 +78,38 @@ struct ContentView: View {
 
             
             VStack(alignment: .center,
-                   spacing:    20) {
+                   spacing:   0) {
          
                 Spacer()
 
                 Text("StimmOMat")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
+                    .font(.system(size: 66))
+                    .fontWeight(.semibold)
+                    .tracking(2)
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
+                    .padding(.bottom, 15.0)
 
                 Text("Hallo, ich bin der StimmOmat.")
-                    .font(.title)
-                    .fontWeight(.bold)
+                    .font(.system(size: 33))
+                    .fontWeight(.semibold)
+                    .tracking(2)
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
+                    .padding(.bottom, 30.0)
 
                 Text("Ich stelle dir jetzt 3 Fragen\nund im Anschluss mache ich dein Bild.")
-                    .font(.title3)
+                    .font(.system(size: 25))
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
+                    .padding(.bottom, 50.0)
 
                 Text("Viel Spaß!")
-                    .font(.title3)
+                    .font(.system(size: 25))
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
-                
+                    .padding(.bottom, 50.0)
+
                 Spacer()
                     .frame(height: 30.0)
                 
@@ -125,7 +132,6 @@ struct ContentView: View {
                 {
                     Spacer()
                         .frame(height: 50)
-                        .background(Color.cyan)
                 }
                 
                 Spacer()
@@ -136,7 +142,10 @@ struct ContentView: View {
         }
         .onTapGesture() {
             print("view1 tapped!")
-            showButton = true;
+            if (player.isPlaying == false) {
+                player.playAudio(filename:   "stimmomat1_2_start",
+                                 onFinished: {_ in showButton = true })
+            }
         }
 
     }

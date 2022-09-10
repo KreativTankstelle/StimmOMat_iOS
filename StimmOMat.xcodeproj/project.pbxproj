@@ -14,6 +14,8 @@
 		060C08AF28CBF5EE004CEB6C /* StimmOMatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C08AE28CBF5EE004CEB6C /* StimmOMatTests.swift */; };
 		060C08B928CBF5EE004CEB6C /* StimmOMatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C08B828CBF5EE004CEB6C /* StimmOMatUITests.swift */; };
 		060C08BB28CBF5EE004CEB6C /* StimmOMatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C08BA28CBF5EE004CEB6C /* StimmOMatUITestsLaunchTests.swift */; };
+		0685E38128CCB09100E9C63F /* stimmomat1_2_start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0685E38028CCB09100E9C63F /* stimmomat1_2_start.mp3 */; };
+		0685E38328CCB86100E9C63F /* AudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E38228CCB86100E9C63F /* AudioHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		060C08B428CBF5EE004CEB6C /* StimmOMatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StimmOMatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		060C08B828CBF5EE004CEB6C /* StimmOMatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimmOMatUITests.swift; sourceTree = "<group>"; };
 		060C08BA28CBF5EE004CEB6C /* StimmOMatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimmOMatUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0685E38028CCB09100E9C63F /* stimmomat1_2_start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stimmomat1_2_start.mp3; sourceTree = "<group>"; };
+		0685E38228CCB86100E9C63F /* AudioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +98,12 @@
 		060C089C28CBF5ED004CEB6C /* StimmOMat */ = {
 			isa = PBXGroup;
 			children = (
+				0685E37F28CCAFED00E9C63F /* Voices */,
 				060C089D28CBF5ED004CEB6C /* StimmOMatApp.swift */,
 				060C089F28CBF5ED004CEB6C /* ContentView.swift */,
 				060C08A128CBF5EE004CEB6C /* Assets.xcassets */,
 				060C08A328CBF5EE004CEB6C /* Preview Content */,
+				0685E38228CCB86100E9C63F /* AudioHandler.swift */,
 			);
 			path = StimmOMat;
 			sourceTree = "<group>";
@@ -125,6 +131,14 @@
 				060C08BA28CBF5EE004CEB6C /* StimmOMatUITestsLaunchTests.swift */,
 			);
 			path = StimmOMatUITests;
+			sourceTree = "<group>";
+		};
+		0685E37F28CCAFED00E9C63F /* Voices */ = {
+			isa = PBXGroup;
+			children = (
+				0685E38028CCB09100E9C63F /* stimmomat1_2_start.mp3 */,
+			);
+			path = Voices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +247,7 @@
 			files = (
 				060C08A528CBF5EE004CEB6C /* Preview Assets.xcassets in Resources */,
 				060C08A228CBF5EE004CEB6C /* Assets.xcassets in Resources */,
+				0685E38128CCB09100E9C63F /* stimmomat1_2_start.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				060C08A028CBF5ED004CEB6C /* ContentView.swift in Sources */,
+				0685E38328CCB86100E9C63F /* AudioHandler.swift in Sources */,
 				060C089E28CBF5ED004CEB6C /* StimmOMatApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
