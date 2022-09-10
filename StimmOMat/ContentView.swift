@@ -110,26 +110,25 @@ struct ContentView: View {
                     Spacer()
                         .frame(height: 30.0)
 
-                    if (showButton)
-                    {
-                        Button{
-                            showButton.toggle()
-                            print("los gehts!")
-                        } label: {
-                            Text("Los geht's!")
-                                .foregroundColor(Color.white)
-                                .padding(.horizontal, 22)
-                                .padding(.vertical, 12.0)
-                                .background(Color(red: 224/255, green: 2/255, blue: 121/255))
-                                .font(.title)
-                        }
-                        .frame(height: 50)
+                  //  if (showButton)
+                  //  {
+                    
+                    NavigationLink(destination: Frage1View()) {
+                        Text("Los geht's!")
+                            .foregroundColor(Color.white)
+                            .padding(.horizontal, 22)
+                            .padding(.vertical, 12.0)
+                            .background(Color(red: 224/255, green: 2/255, blue: 121/255))
+                            .font(.title)
                     }
-                    else
-                    {
-                        Spacer()
-                            .frame(height: 50)
-                    }
+                    .frame(height: 50)
+                    
+                  //  }
+                  //  else
+                  //  {
+                  //      Spacer()
+                  //          .frame(height: 50)
+                  //  }
                     
                     Spacer()
 
