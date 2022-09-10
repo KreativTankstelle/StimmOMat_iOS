@@ -43,6 +43,44 @@ struct ContentView: View {
          
                 Spacer()
 
+                HStack()
+                {
+                
+                    Button{
+                        print("Nutzungsbedingungen!")
+                    } label: {
+                        Text("Nutzungsbedingungen")
+                            .font(.footnote)
+                            .foregroundColor(Color.white)
+                            .multilineTextAlignment(.center)
+                    }
+
+                    Text("/")
+                        .font(.footnote)
+                        .foregroundColor(Color.white)
+                        .multilineTextAlignment(.center)
+
+                    Button{
+                        print("Datenschutz!")
+                    } label: {
+                        Text("Datenschutz")
+                            .font(.footnote)
+                            .foregroundColor(Color.white)
+                            .multilineTextAlignment(.center)
+                    }
+                    
+                }
+                .padding(.bottom, 30.0)
+                    
+            }
+            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+
+            
+            VStack(alignment: .center,
+                   spacing:    20) {
+         
+                Spacer()
+
                 Text("StimmOMat")
                     .font(.largeTitle)
                     .fontWeight(.bold)
@@ -68,56 +106,39 @@ struct ContentView: View {
                 Spacer()
                     .frame(height: 30.0)
                 
-                Button{
-                    showButton.toggle()
-                } label: {
-                    Text("Los geht's!")
-                        .foregroundColor(Color.white)
-                        .padding(.horizontal, 22)
-                        .padding(.vertical, 12.0)
-                        .background(Color(red: 224/255, green: 2/255, blue: 121/255))
-                        .font(.title)
-                }
-
-                
-                
-                Spacer()
-
-            }
-            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-
-            VStack(alignment: .center,
-                   spacing:    20) {
-         
-                Spacer()
-
-                HStack()
+                if (showButton)
                 {
-                
-                    Text("Nutzungsbedingungen")
-                        .font(.footnote)
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.center)
-
-                    Text("/")
-                        .font(.footnote)
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.center)
-
-                    Text("Datenschutz")
-                        .font(.footnote)
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.center)
-                    
+                    Button{
+                        showButton.toggle()
+                        print("los gehts!")
+                    } label: {
+                        Text("Los geht's!")
+                            .foregroundColor(Color.white)
+                            .padding(.horizontal, 22)
+                            .padding(.vertical, 12.0)
+                            .background(Color(red: 224/255, green: 2/255, blue: 121/255))
+                            .font(.title)
+                    }
+                    .frame(height: 50)
                 }
-                .padding(.bottom, 30.0)
-                    
+                else
+                {
+                    Spacer()
+                        .frame(height: 50)
+                        .background(Color.cyan)
+                }
+                
+                Spacer()
+
             }
             .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-
 
         }
-        
+        .onTapGesture() {
+            print("view1 tapped!")
+            showButton = true;
+        }
+
     }
 
 }
