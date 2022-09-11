@@ -21,7 +21,9 @@
 		0685E38928CD054800E9C63F /* Frage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E38828CD054800E9C63F /* Frage1.swift */; };
 		0685E38B28CD106200E9C63F /* Frage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E38A28CD106200E9C63F /* Frage2.swift */; };
 		0685E38D28CD106F00E9C63F /* Frage3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E38C28CD106F00E9C63F /* Frage3.swift */; };
-		0685E38F28CD140F00E9C63F /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E38E28CD140F00E9C63F /* CameraManager.swift */; };
+		0685E38F28CD140F00E9C63F /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E38E28CD140F00E9C63F /* CameraService.swift */; };
+		0685E39528CE5B0300E9C63F /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E39428CE5B0300E9C63F /* CameraView.swift */; };
+		0685E39728CE5EBB00E9C63F /* CustomCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E39628CE5EBB00E9C63F /* CustomCameraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +61,9 @@
 		0685E38828CD054800E9C63F /* Frage1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frage1.swift; sourceTree = "<group>"; };
 		0685E38A28CD106200E9C63F /* Frage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frage2.swift; sourceTree = "<group>"; };
 		0685E38C28CD106F00E9C63F /* Frage3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frage3.swift; sourceTree = "<group>"; };
-		0685E38E28CD140F00E9C63F /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		0685E38E28CD140F00E9C63F /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
+		0685E39428CE5B0300E9C63F /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		0685E39628CE5EBB00E9C63F /* CustomCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +125,9 @@
 				0685E38828CD054800E9C63F /* Frage1.swift */,
 				0685E38A28CD106200E9C63F /* Frage2.swift */,
 				0685E38C28CD106F00E9C63F /* Frage3.swift */,
-				0685E38E28CD140F00E9C63F /* CameraManager.swift */,
+				0685E38E28CD140F00E9C63F /* CameraService.swift */,
+				0685E39428CE5B0300E9C63F /* CameraView.swift */,
+				0685E39628CE5EBB00E9C63F /* CustomCameraView.swift */,
 			);
 			path = StimmOMat;
 			sourceTree = "<group>";
@@ -293,11 +299,13 @@
 				0685E38528CCF01300E9C63F /* NutzungsbedingungenView.swift in Sources */,
 				060C08A028CBF5ED004CEB6C /* ContentView.swift in Sources */,
 				0685E38328CCB86100E9C63F /* AudioHandler.swift in Sources */,
+				0685E39528CE5B0300E9C63F /* CameraView.swift in Sources */,
 				0685E38B28CD106200E9C63F /* Frage2.swift in Sources */,
 				0685E38728CD001000E9C63F /* Datenschutz.swift in Sources */,
 				060C089E28CBF5ED004CEB6C /* StimmOMatApp.swift in Sources */,
+				0685E39728CE5EBB00E9C63F /* CustomCameraView.swift in Sources */,
 				0685E38928CD054800E9C63F /* Frage1.swift in Sources */,
-				0685E38F28CD140F00E9C63F /* CameraManager.swift in Sources */,
+				0685E38F28CD140F00E9C63F /* CameraService.swift in Sources */,
 				0685E38D28CD106F00E9C63F /* Frage3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +468,7 @@
 				DEVELOPMENT_TEAM = Z64XA2TVS9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Take photo";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -489,6 +498,7 @@
 				DEVELOPMENT_TEAM = Z64XA2TVS9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Take photo";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

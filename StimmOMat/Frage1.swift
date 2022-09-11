@@ -38,6 +38,9 @@ struct Frage1View: View {
     
     var nummer: Int
     var fragen: Fragen = Fragen()
+
+    @State private var capturedImage: UIImage?     = nil
+    @State private var isCustomCameraViewPresented = false
     
     var body: some View {
 
@@ -68,7 +71,51 @@ struct Frage1View: View {
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 30.0)
 
+                Spacer()
+                
+                
+                
+                
+                if capturedImage != nil {
+                    Image(uiImage: capturedImage!)
+                        .resizable()
+                        .frame(
+                            width:     (capturedImage?.size.width )!/3,
+                            height:    (capturedImage?.size.height)!/3,
+                            alignment: .center)
+                       // .scaledToFill()
+                       // .ignoresSafeArea()
+                } else {
+                    CustomCameraView(captureImage: $capturedImage)
+                        .frame(
+                            width:     UIScreen.main.bounds.width/2,
+                            height:    UIScreen.main.bounds.height/2,
+                            alignment: .center)
+//                    Color(UIColor.systemBackground)
+                }
+                
 
+                
+                Button(
+                    action: {
+                        capturedImage = nil
+                        isCustomCameraViewPresented.toggle()
+                    },
+                    label: {
+                        Image(systemName: "camera.fill")
+                            .font(.largeTitle)
+                            .padding()
+                            .background(Color.black)
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                    })
+                    .padding(.top, 10)
+                    //.sheet(
+                    //    isPresented: $isCustomCameraViewPresented,
+                    //    content: {
+                    //        CustomCameraView(captureImage: $capturedImage)
+                    //    }
+                    //)
 
                 Spacer()
                 
