@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  Frage3.swift
 //  StimmOMat
 //
 //  Created by Achim Friedland on 10.09.22.
