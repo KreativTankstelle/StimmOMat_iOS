@@ -52,7 +52,7 @@ struct CustomCameraView: View {
                             .clipShape(Circle())
                     }
                 )
-                .padding(.bottom)
+                .padding(.bottom, 30)
             }
             
         }
