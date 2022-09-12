@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 
 struct Frage {
@@ -77,47 +78,54 @@ struct Frage1View: View {
                 
                 
                 if capturedImage != nil {
-                    Image(uiImage: capturedImage!)
-                        .resizable()
-                        .frame(
-                            width:     (capturedImage?.size.width )!/3,
-                            height:    (capturedImage?.size.height)!/3,
-                            alignment: .center)
-                       // .scaledToFill()
-                       // .ignoresSafeArea()
+                    ZStack {
+                        
+                        Image(uiImage: capturedImage!)
+                            .resizable()
+                            .frame(
+                                width:     (capturedImage?.size.width )!/3,
+                                height:    (capturedImage?.size.height)!/3,
+                                alignment: .center)
+                            .border(.white, width: 12)
+                           // .scaledToFill()
+                           // .ignoresSafeArea()
+                        
+                            
+                        Button(
+                            action: {
+                                capturedImage = nil
+                                isCustomCameraViewPresented.toggle()
+                            },
+                            label: {
+                                Image(systemName: "arrow.clockwise")
+                                    .font(.system(size: 50))
+                                    .padding()
+                                    .background(Color.gray)
+                                    .foregroundColor(.white)
+                                    .clipShape(Circle())
+                            })
+                            .padding(.top, 10)
+                            //.sheet(
+                            //    isPresented: $isCustomCameraViewPresented,
+                            //    content: {
+                            //        CustomCameraView(captureImage: $capturedImage)
+                            //    }
+                            //)
+
+                    }
+                    
                 } else {
                     CustomCameraView(captureImage: $capturedImage)
                         .frame(
                             width:     UIScreen.main.bounds.width/2,
                             height:    UIScreen.main.bounds.height/2,
                             alignment: .center)
-                        .padding()
-                        .background(.white)
-//                    Color(UIColor.systemBackground)
+                        .border(.white, width: 12)
                 }
                 
 
                 
-                Button(
-                    action: {
-                        capturedImage = nil
-                        isCustomCameraViewPresented.toggle()
-                    },
-                    label: {
-                        Image(systemName: "camera.fill")
-                            .font(.largeTitle)
-                            .padding()
-                            .background(Color.black)
-                            .foregroundColor(.white)
-                            .clipShape(Circle())
-                    })
-                    .padding(.top, 10)
-                    //.sheet(
-                    //    isPresented: $isCustomCameraViewPresented,
-                    //    content: {
-                    //        CustomCameraView(captureImage: $capturedImage)
-                    //    }
-                    //)
+               
 
                 Spacer()
                 

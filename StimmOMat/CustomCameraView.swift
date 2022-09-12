@@ -44,9 +44,12 @@ struct CustomCameraView: View {
                         cameraService.capturePhoto()
                     },
                     label: {
-                        Image(systemName: "circle")
-                            .font(.system(size: 72))
-                            .foregroundColor(.red)
+                        Image(systemName: "camera.fill")
+                            .font(.largeTitle)
+                            .padding()
+                            .background(Color.green)
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
                     }
                 )
                 .padding(.bottom)
