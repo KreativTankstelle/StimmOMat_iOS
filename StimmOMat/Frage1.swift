@@ -91,6 +91,8 @@ struct Frage1View: View {
                             width:     UIScreen.main.bounds.width/2,
                             height:    UIScreen.main.bounds.height/2,
                             alignment: .center)
+                        .padding()
+                        .background(.white)
 //                    Color(UIColor.systemBackground)
                 }
                 
