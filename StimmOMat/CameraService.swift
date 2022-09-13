@@ -38,14 +38,17 @@ class CameraService {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
             
             case .notDetermined:
-            AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
-                guard granted else { return }
-                DispatchQueue.main.async {
-                    self?.setupCamera(position:   cameraPosition,
-                                      completion: completion)
+                AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
+ 
+                    guard granted else { return }
+                    
+                    DispatchQueue.main.async {
+                        self?.setupCamera(position:   cameraPosition,
+                                          completion: completion)
+                    }
+
                 }
-            }
-    
+
             case .restricted:
                 break
             
