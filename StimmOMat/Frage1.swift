@@ -62,7 +62,7 @@ struct Frage1View: View {
                     .tracking(2)
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
-                    .padding(.top, 25.0)
+                    .padding(.top, 35.0)
                     .padding(.bottom, 30.0)
 
                 Text(fragen.GetTitle(number: nummer))

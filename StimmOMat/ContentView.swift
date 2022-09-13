@@ -20,8 +20,11 @@ struct ContentView: View {
 
                 Image("mainScreen-background")
                     .resizable()
-                    .scaledToFit()
+                    .scaledToFill()
                     .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                    .frame(maxWidth:  UIScreen.main.bounds.width,
+                           maxHeight: UIScreen.main.bounds.height)
+                
                 
                 VStack(alignment: .center,
                        spacing:    0) {
