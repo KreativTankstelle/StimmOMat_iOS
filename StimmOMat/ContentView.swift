@@ -126,6 +126,20 @@ struct ContentView: View {
                     }
                     .frame(height: 50)
                     
+                    Spacer()
+                        .frame(height: 15.0)
+
+                    NavigationLink(destination: TakePhotoView()) {
+                        Text("Foto!")
+                            .foregroundColor(Color.white)
+                            .padding(.horizontal, 22)
+                            .padding(.vertical, 12.0)
+                            .background(Color(red: 224/255, green: 2/255, blue: 121/255))
+                            .font(.title)
+                    }
+                    .frame(height: 50)
+
+                    
                   //  }
                   //  else
                   //  {
