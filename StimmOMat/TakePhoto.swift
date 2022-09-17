@@ -8,6 +8,52 @@
 import SwiftUI
 import AVFoundation
 
+public extension UIApplication {
+    func currentUIWindow() -> UIWindow? {
+        let connectedScenes = UIApplication.shared.connectedScenes
+            .filter { $0.activationState == .foregroundActive }
+            .compactMap { $0 as? UIWindowScene }
+        
+        let window = connectedScenes.first?
+            .windows
+            .first { $0.isKeyWindow }
+
+        return window
+        
+    }
+}
+
+struct NavigationUtil {
+  static func popToRootView() {
+            
+      findNavigationController(viewController:
+      UIApplication
+      .shared
+      .connectedScenes
+      .flatMap { ($0 as? UIWindowScene)?.windows ?? [] }
+      .first   { $0.isKeyWindow }?.rootViewController)?
+            
+      .popToRootViewController(animated: true)
+      
+  }
+
+  static func findNavigationController(viewController: UIViewController?) -> UINavigationController? {
+    guard let viewController = viewController else {
+      return nil
+    }
+
+    if let navigationController = viewController as? UINavigationController {
+      return navigationController
+    }
+
+    for childViewController in viewController.children {
+      return findNavigationController(viewController: childViewController)
+    }
+
+    return nil
+  }
+}
+
 struct TakePhotoView: View {
     
     @State private var capturedImage: UIImage?     = nil
@@ -92,8 +138,8 @@ struct TakePhotoView: View {
                 } else {
                     CustomCameraView(captureImage: $capturedImage)
                         .frame(
-                            width:     UIScreen.main.bounds.width/2,
-                            height:    UIScreen.main.bounds.height/2,
+                            width:     UIScreen.main.bounds.width  * 0.55,
+                            height:    UIScreen.main.bounds.height * 0.55,
                             alignment: .center)
                         .border(.white, width: 12)
                 }
@@ -114,11 +160,13 @@ struct TakePhotoView: View {
                         Text("Ich bin mit den")
                             .foregroundColor(Color.white)
                             .font(.system(size: CGFloat(textSize)))
+                        
                         NavigationLink(destination: NutzungsbedingungenView()) {
                             Text("Nutzungsbedingungen")
                                 .foregroundColor(Color.yellow)
                                 .font(.system(size: CGFloat(textSize)))
                         }
+                        
                         Text("einverstanden")
                             .foregroundColor(Color.white)
                             .font(.system(size: CGFloat(textSize)))
@@ -138,11 +186,13 @@ struct TakePhotoView: View {
                         Text("Ich bin mit den")
                             .foregroundColor(Color.white)
                             .font(.system(size: CGFloat(textSize)))
+                        
                         NavigationLink(destination: DatenschutzView()) {
                             Text("Datenschutzbestimmungen")
                                 .foregroundColor(Color.yellow)
                                 .font(.system(size: CGFloat(textSize)))
                         }
+                        
                         Text("einverstanden")
                             .foregroundColor(Color.white)
                             .font(.system(size: CGFloat(textSize)))
@@ -168,7 +218,9 @@ struct TakePhotoView: View {
                             .font(.title)
                     }
                     
-                    Button(action: {}) {
+                    Button(action: {
+                        NavigationUtil.popToRootView()
+                    }) {
                         Text("Neustart")
                             .foregroundColor(Color.white)
                             .padding(.horizontal, 22)
@@ -176,7 +228,7 @@ struct TakePhotoView: View {
                             .background(Color(red: 224/255, green: 2/255, blue: 121/255))
                             .font(.title)
                     }
-                    
+
                 }
                 
                 Spacer()

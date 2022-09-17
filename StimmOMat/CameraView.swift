@@ -30,8 +30,8 @@ struct CameraView: UIViewControllerRepresentable {
         
         cameraService.previewLayer.frame = CGRect(x:      0,
                                                   y:      0,
-                                                  width:  viewController.view.bounds.width/2,
-                                                  height: viewController.view.bounds.height/2)
+                                                  width:  viewController.view.bounds.width  * 0.55,
+                                                  height: viewController.view.bounds.height * 0.55)
 
         return viewController
 
