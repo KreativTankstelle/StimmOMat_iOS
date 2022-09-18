@@ -2,7 +2,7 @@
 //  CameraView.swift
 //  StimmOMat
 //
-//  Created by Achim Friedland on 11.09.22.
+//  Created by Achim Friedland
 //
 
 import SwiftUI
@@ -51,6 +51,11 @@ struct CameraView: UIViewControllerRepresentable {
         
     }
     
+    
+    
+    // https://blog.devgenius.io/camera-preview-and-a-qr-code-scanner-in-swiftui-48b111155c66
+    // https://www.raywenderlich.com/11764166-getting-started-with-photokit
+    // https://developer.apple.com/tutorials/sample-apps/capturingphotos-captureandsave
     class Coordinator: NSObject, AVCapturePhotoCaptureDelegate {
         
         let parent: CameraView

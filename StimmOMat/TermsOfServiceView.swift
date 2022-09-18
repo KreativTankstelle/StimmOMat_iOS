@@ -1,13 +1,13 @@
 //
-//  ContentView.swift
+//  TermsOfServiceView.swift
 //  StimmOMat
 //
-//  Created by Achim Friedland on 10.09.22.
+//  Created by Achim Friedland
 //
 
 import SwiftUI
 
-struct NutzungsbedingungenView: View {
+struct TermsOfServiceView: View {
     var body: some View {
 
         ZStack {
@@ -67,6 +67,6 @@ struct NutzungsbedingungenView: View {
 
 struct NutzungsbedingungenView_Previews: PreviewProvider {
     static var previews: some View {
-        NutzungsbedingungenView()
+        TermsOfServiceView()
     }
 }

@@ -2,7 +2,7 @@
 //  Frage1.swift
 //  StimmOMat
 //
-//  Created by Achim Friedland on 10.09.22.
+//  Created by Achim Friedland
 //
 
 import SwiftUI
@@ -115,10 +115,10 @@ struct Frage1View: View {
                     }
                     
                 } else {
-                    CustomCameraView(captureImage: $capturedImage)
+                    CustomPhotoCameraView(captureImage: $capturedImage)
                         .frame(
-                            width:     UIScreen.main.bounds.width  * CustomCameraView.previewScaling,
-                            height:    UIScreen.main.bounds.height * CustomCameraView.previewScaling,
+                            width:     UIScreen.main.bounds.width  * CustomPhotoCameraView.previewScaling,
+                            height:    UIScreen.main.bounds.height * CustomPhotoCameraView.previewScaling,
                             alignment: .center)
                         .border(.white, width: 12)
                 }

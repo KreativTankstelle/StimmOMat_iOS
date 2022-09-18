@@ -2,7 +2,7 @@
 //  AudioHandler.swift
 //  StimmOMat
 //
-//  Created by Achim Friedland on 10.09.22.
+//  Created by Achim Friedland
 //
 
 import SwiftUI

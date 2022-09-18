@@ -1,14 +1,14 @@
 //
-//  CustomCameraView.swift
+//  CustomPhotoCameraView.swift
 //  StimmOMat
 //
-//  Created by Achim Friedland on 11.09.22.
+//  Created by Achim Friedland
 //
 
 import SwiftUI
 import AVFoundation
 
-struct CustomCameraView: View {
+struct CustomPhotoCameraView: View {
     
     public static var previewScaling = 0.55
 
@@ -45,7 +45,7 @@ struct CustomCameraView: View {
             Image("photoOverlay_2000x3000")
                 .resizable(resizingMode: .stretch)
                 .scaledToFit()
-                .opacity(0.7)
+                .opacity(0.8)
             
             VStack {
                 Spacer()

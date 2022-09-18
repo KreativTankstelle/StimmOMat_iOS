@@ -2,7 +2,7 @@
 //  TakePhoto.swift
 //  StimmOMat
 //
-//  Created by Achim Friedland on 17.09.2022.
+//  Created by Achim Friedland
 //
 
 import SwiftUI
@@ -58,11 +58,11 @@ struct NavigationUtil {
 
 struct TakePhotoView: View {
     
-    @State private var capturedImage: UIImage?     = nil
-    @State private var isCustomCameraViewPresented = false
+    @State private var capturedImage: UIImage?      = nil
+    @State private var isCustomCameraViewPresented  = false
     
-    @State private var usageOK   = false
-    @State private var privacyOK = false
+    @State private var termsOfServiceOK             = false
+    @State private var privacyOK                    = false
     
     private var textSize = 23
 
@@ -128,7 +128,7 @@ struct TakePhotoView: View {
                     
                 } else {
                         
-                    CustomCameraView(captureImage: $capturedImage)
+                    CustomPhotoCameraView(captureImage: $capturedImage)
                         .aspectRatio(2/3, contentMode: .fit)
                         .padding(12.0)
                         .border(Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 1.0), width: 12)
@@ -143,7 +143,7 @@ struct TakePhotoView: View {
 
                     HStack {
                         
-                        Toggle(isOn:  $usageOK,
+                        Toggle(isOn:  $termsOfServiceOK,
                                label: {})
                             .labelsHidden()
 
@@ -151,7 +151,7 @@ struct TakePhotoView: View {
                             .foregroundColor(Color.white)
                             .font(.system(size: CGFloat(textSize)))
                         
-                        NavigationLink(destination: NutzungsbedingungenView()) {
+                        NavigationLink(destination: TermsOfServiceView()) {
                             Text("Nutzungsbedingungen")
                                 .foregroundColor(Color.yellow)
                                 .font(.system(size: CGFloat(textSize)))
@@ -177,7 +177,7 @@ struct TakePhotoView: View {
                             .foregroundColor(Color.white)
                             .font(.system(size: CGFloat(textSize)))
                         
-                        NavigationLink(destination: DatenschutzView()) {
+                        NavigationLink(destination: PrivacyView()) {
                             Text("Datenschutzbestimmungen")
                                 .foregroundColor(Color.yellow)
                                 .font(.system(size: CGFloat(textSize)))

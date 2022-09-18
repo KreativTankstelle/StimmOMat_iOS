@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  StimmOMat
 //
-//  Created by Achim Friedland on 10.09.22.
+//  Created by Achim Friedland
 //
 
 import SwiftUI
@@ -52,7 +52,7 @@ struct ContentView: View {
                     HStack()
                     {
 
-                        NavigationLink(destination: NutzungsbedingungenView()) {
+                        NavigationLink(destination: TermsOfServiceView()) {
                                        Text("Nutzungsbedingungen!")
                                 .font(.footnote)
                                 .foregroundColor(Color.white)
@@ -64,7 +64,7 @@ struct ContentView: View {
                             .multilineTextAlignment(.center)
 
                         
-                        NavigationLink(destination: DatenschutzView()) {
+                        NavigationLink(destination: PrivacyView()) {
                                        Text("Datenschutz!")
                                 .font(.footnote)
                                 .foregroundColor(Color.white)

@@ -17,14 +17,14 @@
 		0621CE9828D5E9630011B97D /* TakePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0621CE9728D5E9630011B97D /* TakePhoto.swift */; };
 		0685E38128CCB09100E9C63F /* stimmomat1_2_start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0685E38028CCB09100E9C63F /* stimmomat1_2_start.mp3 */; };
 		0685E38328CCB86100E9C63F /* AudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E38228CCB86100E9C63F /* AudioHandler.swift */; };
-		0685E38528CCF01300E9C63F /* NutzungsbedingungenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E38428CCF01300E9C63F /* NutzungsbedingungenView.swift */; };
-		0685E38728CD001000E9C63F /* Datenschutz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E38628CD001000E9C63F /* Datenschutz.swift */; };
+		0685E38528CCF01300E9C63F /* TermsOfServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E38428CCF01300E9C63F /* TermsOfServiceView.swift */; };
+		0685E38728CD001000E9C63F /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E38628CD001000E9C63F /* PrivacyView.swift */; };
 		0685E38928CD054800E9C63F /* Frage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E38828CD054800E9C63F /* Frage1.swift */; };
 		0685E38B28CD106200E9C63F /* Frage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E38A28CD106200E9C63F /* Frage2.swift */; };
 		0685E38D28CD106F00E9C63F /* Frage3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E38C28CD106F00E9C63F /* Frage3.swift */; };
 		0685E38F28CD140F00E9C63F /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E38E28CD140F00E9C63F /* CameraService.swift */; };
 		0685E39528CE5B0300E9C63F /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E39428CE5B0300E9C63F /* CameraView.swift */; };
-		0685E39728CE5EBB00E9C63F /* CustomCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E39628CE5EBB00E9C63F /* CustomCameraView.swift */; };
+		0685E39728CE5EBB00E9C63F /* CustomPhotoCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685E39628CE5EBB00E9C63F /* CustomPhotoCameraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,14 +58,14 @@
 		0621CE9728D5E9630011B97D /* TakePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhoto.swift; sourceTree = "<group>"; };
 		0685E38028CCB09100E9C63F /* stimmomat1_2_start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stimmomat1_2_start.mp3; sourceTree = "<group>"; };
 		0685E38228CCB86100E9C63F /* AudioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHandler.swift; sourceTree = "<group>"; };
-		0685E38428CCF01300E9C63F /* NutzungsbedingungenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutzungsbedingungenView.swift; sourceTree = "<group>"; };
-		0685E38628CD001000E9C63F /* Datenschutz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datenschutz.swift; sourceTree = "<group>"; };
+		0685E38428CCF01300E9C63F /* TermsOfServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceView.swift; sourceTree = "<group>"; };
+		0685E38628CD001000E9C63F /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
 		0685E38828CD054800E9C63F /* Frage1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frage1.swift; sourceTree = "<group>"; };
 		0685E38A28CD106200E9C63F /* Frage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frage2.swift; sourceTree = "<group>"; };
 		0685E38C28CD106F00E9C63F /* Frage3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frage3.swift; sourceTree = "<group>"; };
 		0685E38E28CD140F00E9C63F /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
 		0685E39428CE5B0300E9C63F /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-		0685E39628CE5EBB00E9C63F /* CustomCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraView.swift; sourceTree = "<group>"; };
+		0685E39628CE5EBB00E9C63F /* CustomPhotoCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPhotoCameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,14 +122,14 @@
 				060C08A128CBF5EE004CEB6C /* Assets.xcassets */,
 				060C08A328CBF5EE004CEB6C /* Preview Content */,
 				0685E38228CCB86100E9C63F /* AudioHandler.swift */,
-				0685E38428CCF01300E9C63F /* NutzungsbedingungenView.swift */,
-				0685E38628CD001000E9C63F /* Datenschutz.swift */,
+				0685E38428CCF01300E9C63F /* TermsOfServiceView.swift */,
+				0685E38628CD001000E9C63F /* PrivacyView.swift */,
 				0685E38828CD054800E9C63F /* Frage1.swift */,
 				0685E38A28CD106200E9C63F /* Frage2.swift */,
 				0685E38C28CD106F00E9C63F /* Frage3.swift */,
 				0685E38E28CD140F00E9C63F /* CameraService.swift */,
 				0685E39428CE5B0300E9C63F /* CameraView.swift */,
-				0685E39628CE5EBB00E9C63F /* CustomCameraView.swift */,
+				0685E39628CE5EBB00E9C63F /* CustomPhotoCameraView.swift */,
 				0621CE9728D5E9630011B97D /* TakePhoto.swift */,
 			);
 			path = StimmOMat;
@@ -299,15 +299,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0685E38528CCF01300E9C63F /* NutzungsbedingungenView.swift in Sources */,
+				0685E38528CCF01300E9C63F /* TermsOfServiceView.swift in Sources */,
 				0621CE9828D5E9630011B97D /* TakePhoto.swift in Sources */,
 				060C08A028CBF5ED004CEB6C /* ContentView.swift in Sources */,
 				0685E38328CCB86100E9C63F /* AudioHandler.swift in Sources */,
 				0685E39528CE5B0300E9C63F /* CameraView.swift in Sources */,
 				0685E38B28CD106200E9C63F /* Frage2.swift in Sources */,
-				0685E38728CD001000E9C63F /* Datenschutz.swift in Sources */,
+				0685E38728CD001000E9C63F /* PrivacyView.swift in Sources */,
 				060C089E28CBF5ED004CEB6C /* StimmOMatApp.swift in Sources */,
-				0685E39728CE5EBB00E9C63F /* CustomCameraView.swift in Sources */,
+				0685E39728CE5EBB00E9C63F /* CustomPhotoCameraView.swift in Sources */,
 				0685E38928CD054800E9C63F /* Frage1.swift in Sources */,
 				0685E38F28CD140F00E9C63F /* CameraService.swift in Sources */,
 				0685E38D28CD106F00E9C63F /* Frage3.swift in Sources */,

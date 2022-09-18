@@ -1,13 +1,13 @@
 //
-//  ContentView.swift
+//  PrivacyView.swift
 //  StimmOMat
 //
-//  Created by Achim Friedland on 10.09.22.
+//  Created by Achim Friedland
 //
 
 import SwiftUI
 
-struct DatenschutzView: View {
+struct PrivacyView: View {
     var body: some View {
 
         ZStack {
@@ -65,8 +65,8 @@ struct DatenschutzView: View {
 
 }
 
-struct DatenschutzView_Previews: PreviewProvider {
+struct PrivacyView_Previews: PreviewProvider {
     static var previews: some View {
-        DatenschutzView()
+        PrivacyView()
     }
 }
