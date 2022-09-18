@@ -127,11 +127,13 @@ struct TakePhotoView: View {
                     }
                     
                 } else {
-                        
-                    CustomPhotoCameraView(captureImage: $capturedImage)
+
+                    CustomCameraView(showOverlay:  true,
+                                     captureImage: $capturedImage)
                         .aspectRatio(2/3, contentMode: .fit)
                         .padding(12.0)
                         .border(Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 1.0), width: 12)
+
                 }
 
 

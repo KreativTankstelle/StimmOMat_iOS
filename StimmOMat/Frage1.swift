@@ -40,11 +40,22 @@ struct Frage1View: View {
     var nummer: Int
     var fragen: Fragen = Fragen()
 
+    @State private var player = AudioHandler();
+
     @State private var capturedImage: UIImage?     = nil
     @State private var isCustomCameraViewPresented = false
     
+   // init(nummer: Int) {
+   //     self.nummer = nummer
+   // }
+
+    
     var body: some View {
 
+//        if (self.isViewLoaded() && body.window != nil) {
+//        }
+
+        
         ZStack {
 
             Image("mainScreen-background")
@@ -53,6 +64,17 @@ struct Frage1View: View {
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 .frame(maxWidth:  UIScreen.main.bounds.width,
                        maxHeight: UIScreen.main.bounds.height)
+                .onAppear {
+                    print(".onAppear!")
+#if targetEnvironment(simulator)
+                        print("simulator!")
+#else
+                    if (player.isPlaying == false) {
+                        player.playAudio(filename:   "stimmomat1_2_frage1",
+                                         onFinished: {_ in })
+                    }
+#endif
+                            }
             
             VStack(alignment: .center,
                    spacing:   0) {
@@ -86,6 +108,7 @@ struct Frage1View: View {
                                 width:     (capturedImage?.size.width )!/3,
                                 height:    (capturedImage?.size.height)!/3,
                                 alignment: .center)
+                            .padding(12.0)
                             .border(.white, width: 12)
                            // .scaledToFill()
                            // .ignoresSafeArea()
@@ -115,11 +138,10 @@ struct Frage1View: View {
                     }
                     
                 } else {
-                    CustomPhotoCameraView(captureImage: $capturedImage)
-                        .frame(
-                            width:     UIScreen.main.bounds.width  * CustomPhotoCameraView.previewScaling,
-                            height:    UIScreen.main.bounds.height * CustomPhotoCameraView.previewScaling,
-                            alignment: .center)
+                    CustomCameraView(showOverlay:  false,
+                                     captureImage: $capturedImage)
+                        .aspectRatio(2/3, contentMode: .fit)
+                        .padding(12.0)
                         .border(.white, width: 12)
                 }
                 
@@ -138,6 +160,20 @@ struct Frage1View: View {
                         .font(.title)
                 }
                 .frame(height: 50)
+                
+                
+                
+                Button(action: {
+                    NavigationUtil.popToRootView()
+                }) {
+                    Text("Neustart")
+                        .foregroundColor(Color.white)
+                        .padding(.horizontal, 22)
+                        .padding(.vertical, 12.0)
+                        .background(Color(red: 224/255, green: 2/255, blue: 121/255))
+                        .font(.title)
+                }
+                
                 
                 Spacer()
                 

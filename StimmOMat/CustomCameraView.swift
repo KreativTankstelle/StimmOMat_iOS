@@ -8,9 +8,9 @@
 import SwiftUI
 import AVFoundation
 
-struct CustomPhotoCameraView: View {
+struct CustomCameraView: View {
     
-    public static var previewScaling = 0.55
+    var showOverlay: Bool
 
     let cameraService = CameraService(position: AVCaptureDevice.Position.front)
 
@@ -42,10 +42,12 @@ struct CustomPhotoCameraView: View {
                 }
             }
 
-            Image("photoOverlay_2000x3000")
-                .resizable(resizingMode: .stretch)
-                .scaledToFit()
-                .opacity(0.8)
+            if (showOverlay) {
+                Image("photoOverlay_2000x3000")
+                    .resizable(resizingMode: .stretch)
+                    .scaledToFit()
+                    .opacity(0.8)
+            }
             
             VStack {
                 Spacer()

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Frage3View: View {
+    
+    @State private var player = AudioHandler();
+
     var body: some View {
 
         ZStack {
@@ -18,7 +21,17 @@ struct Frage3View: View {
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 .frame(maxWidth:  UIScreen.main.bounds.width,
                        maxHeight: UIScreen.main.bounds.height)
-            
+                .onAppear {
+#if targetEnvironment(simulator)
+                        print("simulator!")
+#else
+                    if (player.isPlaying == false) {
+                        player.playAudio(filename:   "stimmomat1_2_frage3",
+                                     onFinished: {_ in })
+                            }
+#endif
+                }
+
             VStack(alignment: .center,
                    spacing:   0) {
          
