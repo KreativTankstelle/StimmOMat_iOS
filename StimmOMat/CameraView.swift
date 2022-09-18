@@ -12,6 +12,9 @@ struct CameraView: UIViewControllerRepresentable {
 
     typealias UIViewControllerType = UIViewController
 
+    let wwidth: CGFloat
+    let hheight: CGFloat
+
     let cameraService: CameraService
     let didFinishProcessingPhoto: (Result<AVCapturePhoto, Error>) -> ()
     
@@ -26,13 +29,17 @@ struct CameraView: UIViewControllerRepresentable {
 
         let viewController = UIViewController()
         viewController.view.backgroundColor = .black
-        viewController.view.layer.addSublayer(cameraService.previewLayer)
         
+        cameraService.previewLayer.videoGravity = .resizeAspectFill
         cameraService.previewLayer.frame = CGRect(x:      0,
                                                   y:      0,
-                                                  width:  viewController.view.bounds.width  * 0.55,
-                                                  height: viewController.view.bounds.height * 0.55)
+                                                  width:  wwidth,
+                                                  height: hheight)
 
+        DispatchQueue.main.async {
+            viewController.view.layer.addSublayer(cameraService.previewLayer)
+        }
+        
         return viewController
 
     }
@@ -46,6 +53,7 @@ struct CameraView: UIViewControllerRepresentable {
     }
     
     class Coordinator: NSObject, AVCapturePhotoCaptureDelegate {
+        
         let parent: CameraView
         private var didFinishProcessingPhoto: (Result<AVCapturePhoto, Error>) -> ()
         

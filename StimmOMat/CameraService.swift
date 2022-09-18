@@ -10,13 +10,13 @@ import AVFoundation
 
 class CameraService {
 
-    var session:  AVCaptureSession?
-    var delegate: AVCapturePhotoCaptureDelegate?
-    var position: AVCaptureDevice.Position = AVCaptureDevice.Position.front
+    var captureSession:  AVCaptureSession?
+    var captureDelegate: AVCapturePhotoCaptureDelegate?
+    var cameraPosition:  AVCaptureDevice.Position = AVCaptureDevice.Position.front
 
     init (position: AVCaptureDevice.Position)
     {
-        self.position = position
+        self.cameraPosition = position
     }
     
     let output       = AVCapturePhotoOutput()
@@ -25,7 +25,7 @@ class CameraService {
     func start(delegate:   AVCapturePhotoCaptureDelegate,
                completion: @escaping (Error?) -> ()) {
         
-        self.delegate = delegate
+        self.captureDelegate = delegate
         
         checkPermissions(completion: completion)
         
@@ -33,7 +33,7 @@ class CameraService {
     
     private func checkPermissions(completion: @escaping (Error?) -> ()) {
         
-        let cameraPosition = self.position
+        let cameraPosition = self.cameraPosition
         
         switch AVCaptureDevice.authorizationStatus(for: .video) {
             
@@ -56,7 +56,7 @@ class CameraService {
                 break
             
             case .authorized:
-                setupCamera(position:   position,
+                setupCamera(position:   cameraPosition,
                             completion: completion)
 
             @unknown default:
@@ -69,48 +69,71 @@ class CameraService {
     private func setupCamera(position:   AVCaptureDevice.Position,
                              completion: @escaping (Error?) -> ()) {
         
-        let session = AVCaptureSession()
- 
-        if let device = AVCaptureDevice.default(.builtInWideAngleCamera,
-                                                for:      .video,
-                                                position: position) {
+        let captureSession = AVCaptureSession()
+        captureSession.sessionPreset = .photo
+
+        if let captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera,
+                                                       for:      .video,
+                                                       position: position) {
             do
             {
+
+                let input = try AVCaptureDeviceInput(device: captureDevice)
+
+                try captureDevice.lockForConfiguration()
                 
-                let input = try AVCaptureDeviceInput(device: device)
+                input.device.videoZoomFactor = input.device.maxAvailableVideoZoomFactor
+
+                print("minAvailableVideoZoomFactor: " + input.device.minAvailableVideoZoomFactor.description)
+                print("maxAvailableVideoZoomFactor: " + input.device.maxAvailableVideoZoomFactor.description)
+
+                if (input.device.isLowLightBoostSupported) {
+              //      input.device.automaticallyEnablesLowLightBoostWhenAvailable = true
+                }
+
+               // input.device.isFaceDrivenAutoExposureEnabled = true
+               // input.device.isFaceDrivenAutoFocusEnabled = true
                 
-                if session.canAddInput(input) {
-                    session.addInput(input)
+                captureDevice.unlockForConfiguration()
+
+                if captureSession.canAddInput(input) {
+                    captureSession.addInput(input)
                 }
                 
-                if (session.canAddOutput(output)) {
-                    session.addOutput(output)
+                if (captureSession.canAddOutput(output)) {
+                    output.isHighResolutionCaptureEnabled = true
+                    output.maxPhotoQualityPrioritization  = .quality
+                    captureSession.addOutput(output)
                 }
                 
                 previewLayer.videoGravity = .resizeAspectFill
-                previewLayer.session      = session
+                previewLayer.session      = captureSession
                 
-                session.startRunning()
+                captureSession.startRunning()
                 
-                self.session              = session
+                self.captureSession       = captureSession
                 
             }
             catch {
                 completion(error)
             }
         }
+        
+        captureSession.commitConfiguration()
     
     }
     
     func capturePhoto(with settings: AVCapturePhotoSettings = AVCapturePhotoSettings()) {
         
-        let settings2 = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
-        settings2.flashMode = .on
+        let photoSettings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
+        photoSettings.flashMode                     = .on
+        photoSettings.photoQualityPrioritization    = .quality
+        photoSettings.isHighResolutionPhotoEnabled  = true
         
-        // conflicts with: maxPhotoQualityPrioritization
-        // settings2.photoQualityPrioritization = .quality
+//        photoSettings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.hevc])
 
-        output.capturePhoto(with: settings2, delegate: delegate!)
+        output.capturePhoto(with:     photoSettings,
+                            delegate: captureDelegate!)
         
     }
     

@@ -117,8 +117,8 @@ struct Frage1View: View {
                 } else {
                     CustomCameraView(captureImage: $capturedImage)
                         .frame(
-                            width:     UIScreen.main.bounds.width/2,
-                            height:    UIScreen.main.bounds.height/2,
+                            width:     UIScreen.main.bounds.width  * CustomCameraView.previewScaling,
+                            height:    UIScreen.main.bounds.height * CustomCameraView.previewScaling,
                             alignment: .center)
                         .border(.white, width: 12)
                 }

@@ -38,6 +38,7 @@ struct NavigationUtil {
   }
 
   static func findNavigationController(viewController: UIViewController?) -> UINavigationController? {
+      
     guard let viewController = viewController else {
       return nil
     }
@@ -51,6 +52,7 @@ struct NavigationUtil {
     }
 
     return nil
+      
   }
 }
 
@@ -103,15 +105,11 @@ struct TakePhotoView: View {
                         
                         Image(uiImage: capturedImage!)
                             .resizable()
-                            .frame(
-                                width:     (capturedImage?.size.width )!/3,
-                                height:    (capturedImage?.size.height)!/3,
-                                alignment: .center)
+                            .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
                             .border(.white, width: 12)
-                           // .scaledToFill()
+                            .scaledToFit()
                            // .ignoresSafeArea()
-                        
-                            
+
                         Button(
                             action: {
                                 capturedImage = nil
@@ -136,12 +134,11 @@ struct TakePhotoView: View {
                     }
                     
                 } else {
+                        
                     CustomCameraView(captureImage: $capturedImage)
-                        .frame(
-                            width:     UIScreen.main.bounds.width  * 0.55,
-                            height:    UIScreen.main.bounds.height * 0.55,
-                            alignment: .center)
-                        .border(.white, width: 12)
+                        .aspectRatio(2/3, contentMode: .fit)
+                        .padding(12.0)
+                        .border(Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 1.0), width: 12)
                 }
 
 
@@ -203,7 +200,9 @@ struct TakePhotoView: View {
 
                     
                 }
-//                .padding(.trailing, 50.0)
+                .padding(.trailing, 50.0)
+                .padding(.top,      40.0)
+                .padding(.bottom,   30.0)
 
                 Spacer()
 
@@ -230,7 +229,8 @@ struct TakePhotoView: View {
                     }
 
                 }
-                
+                .padding(.bottom,   50.0)
+
                 Spacer()
 
                 
