@@ -9,11 +9,11 @@ import SwiftUI
 
 struct Frage3View: View {
     
-    @State var timer = Timer.publish(every:  1,
+    @State var timer = Timer.publish(every:  0.05,
                                      on:    .main,
                                      in:    .common).autoconnect()
 
-    @State var counter: Int    = -1
+    @State var counter: Float  = -1
     @State var message: String = "Du hast gleich 30 Sekunden Zeit um die Frage zu beantworten."
     
     @State private var player = AudioHandler();
@@ -41,10 +41,11 @@ struct Frage3View: View {
 #endif
                 }
                 .onReceive(timer) { input in
-                    if (counter > -1)
-                    {
-                        message = String(counter) + " Sekunden"
-                        counter = counter - 1
+                    if (counter > -1) {
+                        counter -= 0.05
+                        message = counter >= 0
+                                      ? String(format: "%.0f", counter) + " Sekunden"
+                                      : "0 Sekunden"
                     }
                 }
 
@@ -108,15 +109,24 @@ struct Frage3View: View {
                     .frame(maxWidth:  .infinity,
                            alignment: .bottomTrailing)
 
-                HStack {
+                HStack(spacing: 0) {
 
                     Text("")
-                      .frame(width:     150,
+                      .frame(width: counter >= 0
+                             ? abs( CGFloat(UIScreen.main.bounds.width) / 30.0 * CGFloat(counter))
+                             : UIScreen.main.bounds.width,
                              height:     25,
                              alignment: .center)
                       .background(Color.green)
 
-                    Spacer()
+                    Text("")
+                      .frame(width: counter >= 0
+                             ? abs( CGFloat(UIScreen.main.bounds.width) / 30.0 * CGFloat(30-counter))
+                             : 0,
+                             height:     25,
+                             alignment: .center)
+                      .background(Color.white)
+                    
                 }
                 .background(Color.white)
                 

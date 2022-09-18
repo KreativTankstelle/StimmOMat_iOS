@@ -40,11 +40,11 @@ struct Frage1View: View {
     var nummer: Int
     var fragen: Fragen = Fragen()
     
-    @State var timer = Timer.publish(every:  1,
+    @State var timer = Timer.publish(every:  0.05,
                                      on:    .main,
                                      in:    .common).autoconnect()
 
-    @State var counter: Int    = -1
+    @State var counter: Float  = -1
     @State var message: String = "Du hast gleich 30 Sekunden Zeit um die Frage zu beantworten."
     
     @State private var player = AudioHandler();
@@ -83,15 +83,13 @@ struct Frage1View: View {
                     }
 #endif
                 }
-                .onDisappear() {
-                   // timer.
-                }
                 .onReceive(timer) { input in
                     if (counter > -1) {
-                        message = String(counter) + " Sekunden"
-                        counter = counter - 1
+                        counter -= 0.05
+                        message = counter >= 0
+                                      ? String(format: "%.0f", counter) + " Sekunden"
+                                      : "0 Sekunden"
                     }
-                    print("tick1")
                 }
 
             VStack(alignment: .center,
@@ -201,7 +199,7 @@ struct Frage1View: View {
                 HStack(spacing: 0) {
 
                     Text("")
-                      .frame(width: counter > -1
+                      .frame(width: counter >= 0
                              ? abs( CGFloat(UIScreen.main.bounds.width) / 30.0 * CGFloat(counter))
                              : UIScreen.main.bounds.width,
                              height:     25,
@@ -209,7 +207,7 @@ struct Frage1View: View {
                       .background(Color.green)
 
                     Text("")
-                      .frame(width: counter > -1
+                      .frame(width: counter >= 0
                              ? abs( CGFloat(UIScreen.main.bounds.width) / 30.0 * CGFloat(30-counter))
                              : 0,
                              height:     25,
