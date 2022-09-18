@@ -84,9 +84,6 @@ class CameraService {
                 
                 input.device.videoZoomFactor = input.device.maxAvailableVideoZoomFactor
 
-                print("minAvailableVideoZoomFactor: " + input.device.minAvailableVideoZoomFactor.description)
-                print("maxAvailableVideoZoomFactor: " + input.device.maxAvailableVideoZoomFactor.description)
-
                 if (input.device.isLowLightBoostSupported) {
               //      input.device.automaticallyEnablesLowLightBoostWhenAvailable = true
                 }

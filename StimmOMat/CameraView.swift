@@ -12,10 +12,9 @@ struct CameraView: UIViewControllerRepresentable {
 
     typealias UIViewControllerType = UIViewController
 
-    let wwidth: CGFloat
-    let hheight: CGFloat
-
-    let cameraService: CameraService
+    let viewWidth:                CGFloat
+    let viewHeight:               CGFloat
+    let cameraService:            CameraService
     let didFinishProcessingPhoto: (Result<AVCapturePhoto, Error>) -> ()
     
     func makeUIViewController(context: Context) -> UIViewController {
@@ -33,12 +32,12 @@ struct CameraView: UIViewControllerRepresentable {
         cameraService.previewLayer.videoGravity = .resizeAspectFill
         cameraService.previewLayer.frame = CGRect(x:      0,
                                                   y:      0,
-                                                  width:  wwidth,
-                                                  height: hheight)
+                                                  width:  viewWidth,
+                                                  height: viewHeight)
 
-        DispatchQueue.main.async {
+   //     DispatchQueue.main.async {
             viewController.view.layer.addSublayer(cameraService.previewLayer)
-        }
+   //     }
         
         return viewController
 

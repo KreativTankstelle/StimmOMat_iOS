@@ -105,10 +105,9 @@ struct TakePhotoView: View {
                         
                         Image(uiImage: capturedImage!)
                             .resizable()
-                            .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
+                            .padding(12.0)
                             .border(.white, width: 12)
                             .scaledToFit()
-                           // .ignoresSafeArea()
 
                         Button(
                             action: {
@@ -124,13 +123,7 @@ struct TakePhotoView: View {
                                     .clipShape(Circle())
                             })
                             .padding(.top, 10)
-                            //.sheet(
-                            //    isPresented: $isCustomCameraViewPresented,
-                            //    content: {
-                            //        CustomCameraView(captureImage: $capturedImage)
-                            //    }
-                            //)
-
+                        
                     }
                     
                 } else {
