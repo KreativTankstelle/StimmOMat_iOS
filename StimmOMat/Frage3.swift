@@ -9,6 +9,13 @@ import SwiftUI
 
 struct Frage3View: View {
     
+    @State var timer = Timer.publish(every:  1,
+                                     on:    .main,
+                                     in:    .common).autoconnect()
+
+    @State var counter: Int    = -1
+    @State var message: String = "Du hast gleich 30 Sekunden Zeit um die Frage zu beantworten."
+    
     @State private var player = AudioHandler();
 
     var body: some View {
@@ -27,9 +34,18 @@ struct Frage3View: View {
 #else
                     if (player.isPlaying == false) {
                         player.playAudio(filename:   "stimmomat1_2_frage3",
-                                     onFinished: {_ in })
-                            }
+                                         onFinished: {_ in
+                            counter = 30
+                        })
+                    }
 #endif
+                }
+                .onReceive(timer) { input in
+                    if (counter > -1)
+                    {
+                        message = String(counter) + " Sekunden"
+                        counter = counter - 1
+                    }
                 }
 
             VStack(alignment: .center,
@@ -64,8 +80,27 @@ struct Frage3View: View {
                     .padding(.bottom, 30.0)
                 
                 Spacer()
+
+                HStack {
+
+                    Button(action: {
+                        NavigationUtil.popToRootView()
+                    }) {
+                        Text("Neustart")
+                            .foregroundColor(Color.white)
+                            .padding(.horizontal, 22)
+                            .padding(.vertical, 12.0)
+                            .background(Color(red: 224/255, green: 2/255, blue: 121/255))
+                            .font(.title)
+                    }
+                    .padding()
+
+                }
+                .padding()
                 
-                Text("Du hast gleich 30 Sekunden Zeit um die Frage zu beantworten.")
+                Spacer()
+                
+                Text(message)
                     .font(.system(size: 16))
                     .foregroundColor(Color.white)
                     .padding(.trailing, 10.0)

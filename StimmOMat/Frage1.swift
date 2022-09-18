@@ -39,11 +39,18 @@ struct Frage1View: View {
     
     var nummer: Int
     var fragen: Fragen = Fragen()
+    
+    @State var timer = Timer.publish(every:  1,
+                                     on:    .main,
+                                     in:    .common).autoconnect()
 
+    @State var counter: Int    = -1
+    @State var message: String = "Du hast gleich 30 Sekunden Zeit um die Frage zu beantworten."
+    
     @State private var player = AudioHandler();
-
+    
     @State private var capturedImage: UIImage?     = nil
-    @State private var isCustomCameraViewPresented = false
+  //  @State private var isCustomCameraViewPresented = false
     
    // init(nummer: Int) {
    //     self.nummer = nummer
@@ -65,17 +72,28 @@ struct Frage1View: View {
                 .frame(maxWidth:  UIScreen.main.bounds.width,
                        maxHeight: UIScreen.main.bounds.height)
                 .onAppear {
-                    print(".onAppear!")
 #if targetEnvironment(simulator)
                         print("simulator!")
 #else
                     if (player.isPlaying == false) {
                         player.playAudio(filename:   "stimmomat1_2_frage1",
-                                         onFinished: {_ in })
+                                         onFinished: {_ in
+                            counter = 30
+                        })
                     }
 #endif
-                            }
-            
+                }
+                .onDisappear() {
+                   // timer.
+                }
+                .onReceive(timer) { input in
+                    if (counter > -1) {
+                        message = String(counter) + " Sekunden"
+                        counter = counter - 1
+                    }
+                    print("tick1")
+                }
+
             VStack(alignment: .center,
                    spacing:   0) {
          
@@ -117,7 +135,7 @@ struct Frage1View: View {
                         Button(
                             action: {
                                 capturedImage = nil
-                                isCustomCameraViewPresented.toggle()
+                             //   isCustomCameraViewPresented.toggle()
                             },
                             label: {
                                 Image(systemName: "arrow.clockwise")
@@ -128,12 +146,6 @@ struct Frage1View: View {
                                     .clipShape(Circle())
                             })
                             .padding(.top, 10)
-                            //.sheet(
-                            //    isPresented: $isCustomCameraViewPresented,
-                            //    content: {
-                            //        CustomCameraView(captureImage: $capturedImage)
-                            //    }
-                            //)
 
                     }
                     
@@ -144,42 +156,41 @@ struct Frage1View: View {
                         .padding(12.0)
                         .border(.white, width: 12)
                 }
-                
-
-                
-               
 
                 Spacer()
                 
-                NavigationLink(destination: Frage2View().navigationBarBackButtonHidden(true)) {
-                    Text("Nächste Frage")
-                        .foregroundColor(Color.white)
-                        .padding(.horizontal, 22)
-                        .padding(.vertical, 12.0)
-                        .background(Color(red: 224/255, green: 2/255, blue: 121/255))
-                        .font(.title)
+                HStack {
+                    
+                    NavigationLink(destination: Frage2View().navigationBarBackButtonHidden(true)) {
+                        Text("Nächste Frage")
+                            .foregroundColor(Color.white)
+                            .padding(.horizontal, 22)
+                            .padding(.vertical, 12.0)
+                            .background(Color(red: 224/255, green: 2/255, blue: 121/255))
+                            .font(.title)
+                    }
+                    .padding()
+                    
+                    
+                    
+                    Button(action: {
+                        NavigationUtil.popToRootView()
+                    }) {
+                        Text("Neustart")
+                            .foregroundColor(Color.white)
+                            .padding(.horizontal, 22)
+                            .padding(.vertical, 12.0)
+                            .background(Color(red: 224/255, green: 2/255, blue: 121/255))
+                            .font(.title)
+                    }
+                    .padding()
+
                 }
-                .frame(height: 50)
-                
-                
-                
-                Button(action: {
-                    NavigationUtil.popToRootView()
-                }) {
-                    Text("Neustart")
-                        .foregroundColor(Color.white)
-                        .padding(.horizontal, 22)
-                        .padding(.vertical, 12.0)
-                        .background(Color(red: 224/255, green: 2/255, blue: 121/255))
-                        .font(.title)
-                }
-                
-                
+//                .padding()
+
                 Spacer()
                 
-                
-                
-                Text("Du hast gleich 30 Sekunden Zeit um die Frage zu beantworten.")
+                Text(message)
                     .font(.system(size: 16))
                     .foregroundColor(Color.white)
                     .padding(.trailing, 10.0)
@@ -187,15 +198,24 @@ struct Frage1View: View {
                     .frame(maxWidth:  .infinity,
                            alignment: .bottomTrailing)
 
-                HStack {
+                HStack(spacing: 0) {
 
                     Text("")
-                      .frame(width:     150,
+                      .frame(width: counter > -1
+                             ? abs( CGFloat(UIScreen.main.bounds.width) / 30.0 * CGFloat(counter))
+                             : UIScreen.main.bounds.width,
                              height:     25,
                              alignment: .center)
                       .background(Color.green)
 
-                    Spacer()
+                    Text("")
+                      .frame(width: counter > -1
+                             ? abs( CGFloat(UIScreen.main.bounds.width) / 30.0 * CGFloat(30-counter))
+                             : 0,
+                             height:     25,
+                             alignment: .center)
+                      .background(Color.white)
+                    
                 }
                 .background(Color.white)
                 

@@ -9,6 +9,13 @@ import SwiftUI
 
 struct Frage2View: View {
     
+    @State var timer = Timer.publish(every:  1,
+                                     on:    .main,
+                                     in:    .common).autoconnect()
+
+    @State var counter: Int    = -1
+    @State var message: String = "Du hast gleich 30 Sekunden Zeit um die Frage zu beantworten."
+    
     @State private var player = AudioHandler();
 
     var body: some View {
@@ -27,9 +34,19 @@ struct Frage2View: View {
 #else
                     if (player.isPlaying == false) {
                         player.playAudio(filename:   "stimmomat1_2_frage2",
-                                         onFinished: {_ in })
+                                         onFinished: {_ in
+                            counter = 30
+                        })
                     }
 #endif
+                }
+                .onReceive(timer) { input in
+                    if (counter > -1)
+                    {
+                        message = String(counter) + " Sekunden"
+                        counter = counter - 1
+                    }
+                    print("tick2")
                 }
 
             VStack(alignment: .center,
@@ -60,20 +77,38 @@ struct Frage2View: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: Frage3View().navigationBarBackButtonHidden(true)) {
-                    Text("Nächste Frage")
-                        .foregroundColor(Color.white)
-                        .padding(.horizontal, 22)
-                        .padding(.vertical, 12.0)
-                        .background(Color(red: 224/255, green: 2/255, blue: 121/255))
-                        .font(.title)
+                HStack {
+                    
+                    NavigationLink(destination: Frage3View().navigationBarBackButtonHidden(true)) {
+                        Text("Nächste Frage")
+                            .foregroundColor(Color.white)
+                            .padding(.horizontal, 22)
+                            .padding(.vertical, 12.0)
+                            .background(Color(red: 224/255, green: 2/255, blue: 121/255))
+                            .font(.title)
+                    }
+                    .padding()
+                    
+                    
+                    
+                    Button(action: {
+                        NavigationUtil.popToRootView()
+                    }) {
+                        Text("Neustart")
+                            .foregroundColor(Color.white)
+                            .padding(.horizontal, 22)
+                            .padding(.vertical, 12.0)
+                            .background(Color(red: 224/255, green: 2/255, blue: 121/255))
+                            .font(.title)
+                    }
+                    .padding()
+
                 }
-                .frame(height: 50)
+                .padding()
                 
                 Spacer()
                 
-                
-                Text("Du hast gleich 30 Sekunden Zeit um die Frage zu beantworten.")
+                Text(message)
                     .font(.system(size: 16))
                     .foregroundColor(Color.white)
                     .padding(.trailing, 10.0)
